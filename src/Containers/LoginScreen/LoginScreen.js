@@ -1,13 +1,44 @@
 import React from "react";
 
 // styles
-import "./LoginScreen.css";
+import "./Styles/LoginScreen.css";
+import Styles from "./Styles/LoginScreenStyle";
 
-const backgroundImage =
-  "https://worldinbetween.files.wordpress.com/2014/03/moma-window.jpg";
+// constant
+import { backgroundImage } from "../../Constants/ConstantData";
+
+let inputTypes = {
+  EMAIL: "email",
+  PASSWORD: "passworld",
+};
+
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      email: "",
+      password: "",
+    };
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit() {
+    console.log("Email >>>>>>", this.state.email);
+    console.log("Password >>>>>>", this.state.password);
+  }
+
+  getInput(e, inputType) {
+    switch (inputType) {
+      case inputTypes.EMAIL:
+        this.setState({ email: e.target.value });
+        break;
+      case inputTypes.PASSWORD:
+        this.setState({ password: e.target.value });
+        break;
+      default:
+        console.log("Input is not valid");
+    }
   }
 
   render() {
@@ -20,71 +51,56 @@ class LoginScreen extends React.Component {
           justifyContent: "center",
         }}
       >
-        <div
-          class="row"
-          style={{
-            alignSelf: "center",
-            width: "60%",
-            height: "60%",
-          }}
-        >
-          <div
-            class="col-6"
-            style={{
-              alignSelf: "center",
-              display: "flex",
-              justifyContent: "center",
-              backgroundColor: "white",
-              opacity: 1,
-              height: "100%",
-            }}
-          >
-            <form style={{ width: "50%", alignSelf: "center" }}>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter email"
-                />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your email with anyone else.
-                </small>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                  placeholder="Password"
-                />
-              </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label class="form-check-label" for="exampleCheck1">
-                  Check me out
-                </label>
-              </div>
+        <div class="row" style={Styles.contentContainer}>
+          <div class="col-6" style={Styles.leftContent}>
+            <div style={Styles.formContainer}>
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                    onChange={(e) => this.getInput(e, inputTypes.EMAIL)}
+                  />
+                  <small id="emailHelp" class="form-text text-muted">
+                    We'll never share your email with anyone else.
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                    onChange={(e) => this.getInput(e, inputTypes.PASSWORD)}
+                  />
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <small class="form-check-label" for="exampleCheck1">
+                    Remember me in the next login time
+                  </small>
+                </div>
+              </form>
               <button
                 type="submit"
                 class="btn btn-primary"
-                style={{ width: "100%", marginTop: 20 }}
+                style={Styles.submitBtn}
+                onClick={this.onSubmit}
               >
-                Submit
+                Login
               </button>
-            </form>
+            </div>
           </div>
-          <div
-            class="col-6 "
-            style={{ backgroundColor: "white", opacity: 0.5, height: "100%" }}
-          ></div>
+          <div class="col-6 " style={Styles.rightContainer}></div>
         </div>
       </div>
     );

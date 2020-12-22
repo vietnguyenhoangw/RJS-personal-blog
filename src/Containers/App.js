@@ -1,17 +1,29 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
+
+// router
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // screen
-import LoginScreen from "./LoginScreen/LoginScreen"
+import LoginScreen from "./LoginScreen/LoginScreen";
+import HomeScreen from "./HomeScreen/HomeScreen";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <LoginScreen />
-        </header>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <LoginScreen />
+          </Route>
+          <Route path="/login">
+            <LoginScreen />
+          </Route>
+          <Route path="/home">
+            <HomeScreen />
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }
