@@ -4,6 +4,9 @@ import React from "react";
 import "./Styles/HomeScreen.css";
 // import Styles from "./Styles/HomeScreen";
 
+// components
+import SidebarMenu from "../../Components/SidebarMenu/SidebarMenu";
+
 // constant
 import { backgroundImage } from "../../Constants/ConstantData";
 
@@ -14,15 +17,17 @@ class HomeScreen extends React.Component {
 
   render() {
     return (
-      <div
-        class="container-fluid main-wrapper"
-        style={{
-          backgroundImage: "url(" + backgroundImage + ")",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <h3>Home</h3>
+      <div style={{backgroundColor: '#f1f1f1'}}>
+        <div
+          style={{
+            width: "30%",
+            alignSelf: "center",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <SidebarMenu />
+        </div>
       </div>
     );
   }
