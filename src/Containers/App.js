@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.css";
 
 // router
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import PrivateRoute from "../Components/Routers/PrivateRoute";
+import PublicRoute from "../Components/Routers/PublicRoute";
 
 // screen
 import LoginScreen from "./LoginScreen/LoginScreen";
@@ -14,18 +16,14 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/">
-            <LoginScreen />
-          </Route>
-          <Route path="/login">
-            <LoginScreen />
-          </Route>
-          <Route path="/home">
-            <HomeScreen />
-          </Route>
-          <Route path="/user_dashboard">
-            <UserDashboardScreen />
-          </Route>
+          <PublicRoute restricted={false} component={HomeScreen} path="/" exact />
+          <PublicRoute
+            restricted={true}
+            component={LoginScreen}
+            path="/login"
+            exact
+          />
+          <PrivateRoute component={UserDashboardScreen} path="/user_dashboard" exact />
         </Switch>
       </Router>
     );

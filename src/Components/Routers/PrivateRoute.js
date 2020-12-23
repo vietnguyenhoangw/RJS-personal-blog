@@ -1,17 +1,18 @@
-import React, { PropTypes } from "react";
+import React, { Component }  from "react";
 
 // router
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 class PrivateRoute extends Component {
     render() {
       const { component: Component, ...rest } = this.props;
-  
+      const isLogin = false
+
       return (
         <Route {...rest} render={props => (
-            isLogin() ?
+            isLogin ?
                 <Component {...props} />
-            : <Redirect to="/signin" />
+            : <Redirect to="/login" />
         )} />
       );
     }
