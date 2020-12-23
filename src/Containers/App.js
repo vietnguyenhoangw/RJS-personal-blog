@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // screen
 import LoginScreen from "./LoginScreen/LoginScreen";
 import HomeScreen from "./HomeScreen/HomeScreen";
+import UserDashboardScreen from "./UserDashboardScreen/UserDashboardScreen";
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,9 @@ class App extends React.Component {
           </Route>
           <Route path="/home">
             <HomeScreen />
+          </Route>
+          <Route path="/user_dashboard">
+            <UserDashboardScreen />
           </Route>
         </Switch>
       </Router>
