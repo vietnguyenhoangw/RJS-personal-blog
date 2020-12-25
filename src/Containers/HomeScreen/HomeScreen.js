@@ -23,7 +23,7 @@ class HomeScreen extends React.Component {
         style={{ backgroundColor: "#f1f1f1" }}
       >
         <div class="row">
-          <div class="col-4 .bg-success">
+          <div class="col-3 .bg-success">
             <div
               style={{
                 alignSelf: "center",
@@ -34,7 +34,9 @@ class HomeScreen extends React.Component {
               <SidebarMenu />
             </div>
           </div>
-          <div class="col-8 .bg-secondary pl-0">
+          <div class="col-9 .bg-secondary pl-0" style={{
+            overflow: "auto"
+          }}>
             <PostList />
           </div>
         </div>

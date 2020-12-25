@@ -3,34 +3,31 @@ import "./PostList.css";
 import PropTypes from "prop-types";
 
 // components
-import { PostCard } from "../../Components" 
+import { PostCard } from "../../Components"
 
 class PostList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: ["Hello", "Haha", "Hihi"],
+      list: ["Hello", "Haha", "Hihi", "Hello", "Haha", "Hihi", "Hello", "Haha", "Hihi"],
     };
   }
 
-  displayList (){
+  displayList() {
     return this.state.list.map((item) => (
-      <div>
-        <PostCard />
-      </div>
+      <PostCard />
     ));
   };
 
   render() {
     return (
-        <nav
-          class="w3-animate-right main-wrapper" 
-          styles="z-index:3;width:500px"
-          id="mySidebar"
-          style={{backgroundColor: 'white'}}
-        >
-          {this.displayList()}
-        </nav>
+      <nav
+        class="w3-animate-right main-wrapper row ml-2 p-4"
+        id="mySidebar"
+        style={{ backgroundColor: 'white', overflow: "auto" }}
+      >
+        {this.displayList()}
+      </nav>
     );
   }
 }

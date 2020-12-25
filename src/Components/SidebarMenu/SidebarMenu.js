@@ -7,9 +7,8 @@ class SidebarMenu extends Component {
     return (
         <nav
           class="w3-animate-left main-wrapper" 
-          styles="z-index:3;width:500px"
           id="mySidebar"
-          style={{backgroundColor: 'white'}}
+          style={{backgroundColor: 'white', width: "100vh", height: "100vh"}}
         >
           <br />
           <div class="w3-container">
