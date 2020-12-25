@@ -6,6 +6,7 @@ import "./Styles/HomeScreen.css";
 
 // components
 import SidebarMenu from "../../Components/SidebarMenu/SidebarMenu";
+import PostList from "../../Components/PostList/PostList";
 
 // constant
 import { backgroundImage } from "../../Constants/ConstantData";
@@ -17,16 +18,25 @@ class HomeScreen extends React.Component {
 
   render() {
     return (
-      <div style={{backgroundColor: '#f1f1f1'}}>
-        <div
-          style={{
-            width: "30%",
-            alignSelf: "center",
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <SidebarMenu />
+      <div
+        class="container-fluid main-wrapper"
+        style={{ backgroundColor: "#f1f1f1" }}
+      >
+        <div class="row">
+          <div class="col-4 .bg-success">
+            <div
+              style={{
+                alignSelf: "center",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <SidebarMenu />
+            </div>
+          </div>
+          <div class="col-8 .bg-secondary pl-0">
+            <PostList />
+          </div>
         </div>
       </div>
     );
