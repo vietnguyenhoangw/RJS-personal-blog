@@ -13,7 +13,7 @@ class SidebarMenu extends Component {
           <br />
           <div class="w3-container">
             <img
-              src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+              src="https://instagram.fvca1-2.fna.fbcdn.net/v/t51.2885-15/e35/27881437_530548347315481_2260140412540813312_n.jpg?_nc_ht=instagram.fvca1-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=UDIUcs74owkAX9PuHaj&tp=1&oh=dabfd749db49eda7bfa8104adcea1370&oe=6012BBCD"
               class="w3-round"
               alt="Lamp" width="200" height="200"
             />
