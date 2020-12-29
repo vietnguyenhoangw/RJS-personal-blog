@@ -11,7 +11,7 @@ class SidebarMenu extends Component {
           style={{backgroundColor: 'white', width: "100vh", height: "100vh"}}
         >
           <br />
-          <div class="w3-container">
+          <div class="w3-container" style={{marginTop: 70}}>
             <img
               src="https://instagram.fvca1-2.fna.fbcdn.net/v/t51.2885-15/e35/27881437_530548347315481_2260140412540813312_n.jpg?_nc_ht=instagram.fvca1-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=UDIUcs74owkAX9PuHaj&tp=1&oh=dabfd749db49eda7bfa8104adcea1370&oe=6012BBCD"
               class="w3-round"

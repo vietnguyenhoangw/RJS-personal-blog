@@ -21,8 +21,8 @@ class PostList extends Component {
 
   displayHeader() {
     return (
-      <div style={{height: "20vh",  width: "100%", backgroundColor: 'red', marginBottom: 15}}>
-        <p>Hello</p>
+      <div style={{height: "20vh",  width: "100%", backgroundColor: 'white', marginBottom: 15}}>
+        {/* <p>Hello</p> */}
       </div>
     )
   };
@@ -32,9 +32,9 @@ class PostList extends Component {
       <nav
         class="w3-animate-right main-wrapper row"
         id="mySidebar"
-        style={{ backgroundColor: 'white', overflow: "auto", paddingLeft: 15, paddingRight: 15 }}
+        style={{ backgroundColor: 'white', overflow: "auto", paddingLeft: 15, paddingRight: 15, paddingTop: 90 }}
       >
-        {this.displayHeader()}
+        {/* {this.displayHeader()} */}
         {this.displayList()}
       </nav>
     );

@@ -9,7 +9,7 @@ class PostCard extends Component {
         className="mb-4 col-md-4 col-sm-6 pr-0"
         style={{ display: "flex", flexDirection: "row", width: "100vh" }}
       >
-        <div style={{ background: "rgb(241, 241, 241)" }}>
+        <div style={{ background: "rgb(241, 241, 241)", borderRadius: 5 }}>
           <img
             width="100%"
             height="230px"
@@ -17,10 +17,10 @@ class PostCard extends Component {
             class="w3-hover-opacity"
           />
           <div class="p-2">
-            <p style={{ marginBottom: 0 }}>
+            <h5 style={{ marginBottom: 0 }}>
               <b>Lorem Ipsum</b>
-            </p>
-            <p>
+            </h5>
+            <p style={{fontSize: 15}}>
               Praesent porta lectus vitae, ultricies congue gravida diam non
               fringilla.
             </p>
