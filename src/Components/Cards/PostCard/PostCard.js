@@ -24,8 +24,9 @@ class PostCard extends Component {
               Praesent porta lectus vitae, ultricies congue gravida diam non
               fringilla.
             </p>
+            <small>30/10/2020</small>
             <img
-              style={{float: "right", marginBottom: 10}}
+              style={{float: "right"}}
               width="35"
               height="35"
               src="https://i.pinimg.com/originals/cc/e9/a9/cce9a9a4a3d74bfce45f8b568d8c6e6d.png"

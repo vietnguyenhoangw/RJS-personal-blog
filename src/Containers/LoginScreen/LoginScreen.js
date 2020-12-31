@@ -7,6 +7,12 @@ import Styles from "./Styles/LoginScreenStyle";
 // constant
 import { backgroundImage } from "../../Constants/ConstantData";
 
+// redux
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as actions from "../../Redux/actions/AuthActions"
+
+import * as TodoActions from "../../Redux/actions/TodoListActions";
 let inputTypes = {
   EMAIL: "email",
   PASSWORD: "passworld",
@@ -42,6 +48,7 @@ class LoginScreen extends React.Component {
   }
 
   render() {
+
     return (
       <div
         class="container-fluid main-wrapper"
@@ -94,7 +101,9 @@ class LoginScreen extends React.Component {
                 type="submit"
                 class="btn btn-primary"
                 style={Styles.submitBtn}
-                onClick={this.onSubmit}
+                onClick={() => {
+                  this.props.loginEmail("vn", "123123123")
+                }}
               >
                 Login
               </button>
@@ -107,4 +116,14 @@ class LoginScreen extends React.Component {
   }
 }
 
-export default LoginScreen;
+// export default LoginScreen;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = {
+  ...actions
+};
+
+const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default LoginContainer;
