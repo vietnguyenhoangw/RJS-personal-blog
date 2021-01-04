@@ -1,9 +1,24 @@
 import { ActionEvent } from "./ActionTypes";
 
-export function loginEmail(email, password) {
+export const loginEmail = payload => {
   return {
     type: ActionEvent.LOGIN_EMAIL,
-    email: email,
-    password: password
-  };
+    payload
+  }
 }
+
+export const loginEmailSuccess = payload => ({
+  type: ActionEvent.LOGIN_EMAIL_SUCCESS,
+  payload
+});
+
+export const loginEmailFaild = payload => ({
+  type: ActionEvent.LOGIN_EMAIL_FAILD,
+  payload
+});
+
+export default {
+  loginEmail,
+  loginEmailSuccess,
+  loginEmailFaild,
+};

@@ -14,9 +14,9 @@ class PostCard extends Component {
             width="100%"
             height="230px"
             src="https://www.guillenphoto.com/data/blog/2016/005-chronique-pourquoi-choisir-un-point-de-vue/images/why-choosing-a-good-point-of-view-in-nature-photography-amar-guillen-photographer.jpg"
-            class="w3-hover-opacity"
+            className="w3-hover-opacity"
           />
-          <div class="p-2">
+          <div className="p-2">
             <h5 style={{ marginBottom: 0 }}>
               <b>Lorem Ipsum</b>
             </h5>

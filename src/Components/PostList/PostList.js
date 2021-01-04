@@ -30,7 +30,7 @@ class PostList extends Component {
   render() {
     return (
       <nav
-        class="w3-animate-right main-wrapper row"
+        className="w3-animate-right main-wrapper row"
         id="mySidebar"
         style={{ backgroundColor: 'white', overflow: "auto", paddingLeft: 15, paddingRight: 15, paddingTop: 90 }}
       >

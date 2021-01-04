@@ -15,7 +15,7 @@ class UserDashboardScreen extends React.Component {
   render() {
     return (
       <div
-        class="container-fluid main-wrapper"
+        className="container-fluid main-wrapper"
         style={{
           backgroundImage: "url(" + backgroundImage + ")",
           display: "flex",

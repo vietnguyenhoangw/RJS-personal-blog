@@ -1,17 +1,36 @@
 import { ActionEvent } from "../actions/ActionTypes";
 
-const authReducers = (state = {}, action) => {
-  switch (action.type) {
-    case ActionEvent.LOGIN_EMAIL: {
-      console.log(
-        "🚀 ~ file: LoginReducer.js ~ line 4 ~ loginEmail ~ action",
-        action
-      );
-      return {};
-    }
-    default:
-      return {};
-  }
+const initData = {
+  refreshToken: '',
+  accessToken: '',
+  isLoading: false,
+  error: '',
 };
 
-export default authReducers
+const authReducers = (state = initData, { type, payload }) => {
+  console.log(`loginReducer type: ${type} with payload: ${payload}`);
+  switch (type) {
+    case ActionEvent.LOGIN_EMAIL:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case ActionEvent.LOGIN_EMAIL_SUCCESS:
+      return {
+        ...state,
+        refreshToken: payload.access_token,
+        accessToken: payload.refresh_token,
+        isLoading: false,
+        error: '',
+      };
+    case ActionEvent.LOGIN_EMAIL_FAILD:
+      return {
+        ...state,
+        isLoading: false,
+        error: 'Login fail',
+      };
+    default:
+      return state;
+  }
+};
+export default authReducers;

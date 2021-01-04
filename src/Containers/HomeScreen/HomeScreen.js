@@ -19,15 +19,15 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <div
-        class="container-fluid main-wrapper"
+        className="container-fluid main-wrapper"
         style={{ backgroundColor: "white" }}
       >
-        <div class="row">
-          <div class="col-1" />
+        <div className="row">
+          <div className="col-1" />
           <div>
             {/* Top navigation bar */}
             <div
-              class="col-10"
+              className="col-10"
               style={{
                 height: 70,
                 width: "100%",
@@ -35,7 +35,7 @@ class HomeScreen extends React.Component {
                 marginBottom: 15,
                 position: "absolute",
                 zIndex: 100,
-                boxShadow:"0px 4px 2px #FAFAFA"
+                boxShadow: "0px 4px 2px #FAFAFA"
               }}
             >
               <div
@@ -53,7 +53,7 @@ class HomeScreen extends React.Component {
               <div />
             </div>
           </div>
-          <div class="col-2 .bg-success" style={{paddingRight: 10}}>
+          <div className="col-2 .bg-success" style={{ paddingRight: 10 }}>
             <div
               style={{
                 alignSelf: "center",
@@ -65,14 +65,14 @@ class HomeScreen extends React.Component {
             </div>
           </div>
           <div
-            class="col-8 .bg-secondary pl-0"
+            className="col-8 .bg-secondary pl-0"
             style={{
               overflow: "auto",
             }}
           >
             <PostList />
           </div>
-          <div class="col-1" />
+          <div className="col-1" />
         </div>
       </div>
     );

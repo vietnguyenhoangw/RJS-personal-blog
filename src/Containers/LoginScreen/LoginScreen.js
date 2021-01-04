@@ -9,15 +9,12 @@ import { backgroundImage } from "../../Constants/ConstantData";
 
 // redux
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import * as actions from "../../Redux/actions/AuthActions"
 
-import * as TodoActions from "../../Redux/actions/TodoListActions";
 let inputTypes = {
   EMAIL: "email",
   PASSWORD: "passworld",
 };
-
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -51,65 +48,65 @@ class LoginScreen extends React.Component {
 
     return (
       <div
-        class="container-fluid main-wrapper"
+        className="container-fluid main-wrapper"
         style={{
           backgroundImage: "url(" + backgroundImage + ")",
           display: "flex",
           justifyContent: "center",
         }}
       >
-        <div class="row" style={Styles.contentContainer}>
-          <div class="col-6" style={Styles.leftContent}>
+        <div className="row" style={Styles.contentContainer}>
+          <div className="col-6" style={Styles.leftContent}>
             <div style={Styles.formContainer}>
               <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                <div className="form-group">
+                  <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     onChange={(e) => this.getInput(e, inputTypes.EMAIL)}
                   />
-                  <small id="emailHelp" class="form-text text-muted">
+                  <small id="emailHelp" className="form-text text-muted">
                     We'll never share your email with anyone else.
                   </small>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                <div className="form-group">
+                  <label htmlFor="exampleInputPassword1">Password</label>
                   <input
                     type="password"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
                     onChange={(e) => this.getInput(e, inputTypes.PASSWORD)}
                   />
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                   <input
                     type="checkbox"
-                    class="form-check-input"
+                    className="form-check-input"
                     id="exampleCheck1"
                   />
-                  <small class="form-check-label" for="exampleCheck1">
+                  <small className="form-check-label" htmlFor="exampleCheck1">
                     Remember me in the next login time
                   </small>
                 </div>
               </form>
               <button
                 type="submit"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 style={Styles.submitBtn}
                 onClick={() => {
-                  this.props.loginEmail("vn", "123123123")
+                  this.props.loginEmail({ email: "vietnguyenhoangw@gmail.com", password: "12345678" })
                 }}
               >
                 Login
               </button>
             </div>
           </div>
-          <div class="col-6 " style={Styles.rightContainer}></div>
+          <div className="col-6 " style={Styles.rightContainer}></div>
         </div>
       </div>
     );
