@@ -9,7 +9,7 @@ import { backgroundImage } from "../../Constants/ConstantData";
 
 // redux
 import { connect } from "react-redux";
-import * as actions from "../../Redux/Actions/AuthActions";
+import actions from "../../Redux/Actions/AuthActions";
 
 // utils
 import { validateEmail } from "../../Utils/Validations"
