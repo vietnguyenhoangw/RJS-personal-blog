@@ -9,8 +9,12 @@ import { backgroundImage } from "../../Constants/ConstantData";
 
 // redux
 import { connect } from "react-redux";
-import actions from "../../Redux/Actions/AuthActions";
-
+import {
+  loginEmail,
+  loginEmailSuccess,
+  loginEmailFaild,
+} from "../../Redux/Actions/AuthActions";
+// const actions = require("../../Redux/Actions/AuthActions")
 // utils
 import { validateEmail } from "../../Utils/Validations"
 
@@ -165,7 +169,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  ...actions,
+  loginEmail,
+  loginEmailSuccess,
+  loginEmailFaild,
 };
 
 const LoginContainer = connect(
