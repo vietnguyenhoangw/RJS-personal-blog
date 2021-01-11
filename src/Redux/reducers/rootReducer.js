@@ -1,10 +1,8 @@
- import { combineReducers } from 'redux';
- import todoListReducers from '../reducers/TodoListReducer';
- import authReducers from '../reducers/AuthReducer'
+import { combineReducers } from 'redux';
+import authReducers from './AuthReducer'
 
- const rootReducer = combineReducers({
-    todoListReducers,
-    authReducers
- });
+const rootReducer = combineReducers({
+   authReducers
+});
 
- export default rootReducer;
+export default rootReducer;

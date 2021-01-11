@@ -9,7 +9,10 @@ import { backgroundImage } from "../../Constants/ConstantData";
 
 // redux
 import { connect } from "react-redux";
-import * as actions from "../../Redux/actions/AuthActions"
+import * as actions from "../../Redux/Actions/AuthActions";
+
+// utils
+import { validateEmail } from "../../Utils/Validations"
 
 let inputTypes = {
   EMAIL: "email",
@@ -21,14 +24,41 @@ class LoginScreen extends React.Component {
     this.state = {
       email: "",
       password: "",
+      isShowAlert: false,
+      alertMessage: ""
     };
 
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  validationCheck() {
+    const isValidEmail = validateEmail(this.state.email)
+    if (isValidEmail) {
+      if (!!this.state.password && this.state.password.length > 8) {
+        this.setState({ isShowAlert: false })
+        return true
+      } else {
+        this.setState({ isShowAlert: true })
+        this.setState({ alertMessage: "Password must be at least 9 character !" })
+        return false
+      }
+    } else {
+      this.setState({ isShowAlert: true })
+      this.setState({ alertMessage: "Invalid email !" })
+      return false
+    }
+  }
+
   onSubmit() {
-    console.log("Email >>>>>>", this.state.email);
-    console.log("Password >>>>>>", this.state.password);
+    const isInvalid = this.validationCheck()
+    if (isInvalid) {
+      this.props.loginEmail({
+        email: this.state.email,
+        password: this.state.password,
+      });
+    } else {
+      return
+    }
   }
 
   getInput(e, inputType) {
@@ -45,7 +75,6 @@ class LoginScreen extends React.Component {
   }
 
   render() {
-
     return (
       <div
         className="container-fluid main-wrapper"
@@ -55,6 +84,9 @@ class LoginScreen extends React.Component {
           justifyContent: "center",
         }}
       >
+        {this.state.isShowAlert && <div className="alert alert-danger" role="alert" style={{ position: "absolute", marginTop: 10 }}>
+          {this.state.alertMessage}
+        </div>}
         <div className="row" style={Styles.contentContainer}>
           <div className="col-6" style={Styles.leftContent}>
             <div style={Styles.formContainer}>
@@ -98,11 +130,20 @@ class LoginScreen extends React.Component {
                 type="submit"
                 className="btn btn-primary"
                 style={Styles.submitBtn}
-                onClick={() => {
-                  this.props.loginEmail({ email: "vietnguyenhoangw@gmail.com", password: "12345678" })
-                }}
+                onClick={() => this.onSubmit()}
               >
-                Login
+                {this.props.state.authState.isLoading ? (
+                  <div>
+                    <span
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                    &ensp;Loading...
+                  </div>
+                ) : (
+                    "Login"
+                  )}
               </button>
             </div>
           </div>
@@ -115,12 +156,19 @@ class LoginScreen extends React.Component {
 
 // export default LoginScreen;
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    state: {
+      authState: state.authReducers,
+    },
+  };
 };
 
 const mapDispatchToProps = {
-  ...actions
+  ...actions,
 };
 
-const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+const LoginContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginScreen);
 export default LoginContainer;

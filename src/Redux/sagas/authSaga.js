@@ -1,6 +1,5 @@
 import { call, put } from 'redux-saga/effects';
-// import { actionLogin } from '../actions/loginAction';
-import login from '../api';
+import login from '../../Services/api';
 
 
 function* postLoginAction(email, password) {
@@ -14,6 +13,6 @@ function* postLoginAction(email, password) {
   }
 }
 
-export default function*(action) {
+export default function* (action) {
   yield call(postLoginAction, action.payload.email, action.payload.password);
 }

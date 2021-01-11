@@ -7,16 +7,20 @@ import reportWebVitals from "./reportWebVitals";
 // redux
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./Redux/reducers/rootReducer";
+import rootReducer from "./Redux/Reducers/RootReducer";
 import createSagaMiddleware from 'redux-saga';
-import rootSaga from "./Redux/sagas/rootSaga"
+import rootSaga from "./Redux/Sagas/RootSaga"
+
+// logger
+import logger from 'redux-logger'
 
 // initialState
 const initialState = {};
 const sagaMiddleware = createSagaMiddleware();
 
 // Create store
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+const middlewares = [sagaMiddleware, logger];
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 // const appRoot = (
 //   <Provider store={store}>

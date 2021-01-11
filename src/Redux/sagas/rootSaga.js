@@ -1,8 +1,8 @@
 import { all, takeLatest } from 'redux-saga/effects';
-import postLoginAction from './authSaga';
-import { ActionEvent } from '../actions/ActionTypes'
+import postLoginAction from './AuthSaga';
+import { ActionEvent } from '../Actions/ActionTypes'
 
-const sagas = function*() {
+const sagas = function* () {
   yield all([takeLatest(ActionEvent.LOGIN_EMAIL, postLoginAction)]);
 };
 

@@ -1,7 +1,7 @@
 import { create } from 'apisauce';
 
 const request = create({
-    baseURL: 'https://api-dev.polymate.fr/v1/auth',
+    baseURL: 'https://api.polymate.fr/v1/auth',
     headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-cache'

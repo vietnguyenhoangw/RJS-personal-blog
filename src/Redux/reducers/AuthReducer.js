@@ -1,14 +1,13 @@
-import { ActionEvent } from "../actions/ActionTypes";
+import { ActionEvent } from "../Actions/ActionTypes";
 
-const initData = {
+const initialState = {
   refreshToken: '',
   accessToken: '',
   isLoading: false,
   error: '',
 };
 
-const authReducers = (state = initData, { type, payload }) => {
-  console.log(`loginReducer type: ${type} with payload: ${payload}`);
+const authReducers = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionEvent.LOGIN_EMAIL:
       return {
