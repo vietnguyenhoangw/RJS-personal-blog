@@ -120,6 +120,7 @@ class LoginScreen extends React.Component {
                     type="checkbox"
                     className="form-check-input"
                     id="exampleCheck1"
+                    style={{ marginTop: 6 }}
                   />
                   <small className="form-check-label" htmlFor="exampleCheck1">
                     Remember me in the next login time
