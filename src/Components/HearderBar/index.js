@@ -1,3 +1,3 @@
-import HearderBarDashboard from "./HearderBarDashboard/HearderBarDashboard"
+import HearderBarDashboard from "./HearderBarDashboard/HearderBarDashboard";
 
-export { HearderBarDashboard }
+export { HearderBarDashboard };

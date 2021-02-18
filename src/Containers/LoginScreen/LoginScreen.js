@@ -5,7 +5,7 @@ import "./Styles/LoginScreen.css";
 import Styles from "./Styles/LoginScreenStyle";
 
 // constant
-import { backgroundImage } from "../../Constants/ConstantData";
+import { backgroundImage } from "../../Constants/ConstantString";
 
 // redux
 import { connect } from "react-redux";
@@ -16,7 +16,7 @@ import {
 } from "../../Redux/Actions/AuthActions";
 // const actions = require("../../Redux/Actions/AuthActions")
 // utils
-import { validateEmail } from "../../Utils/Validations"
+import { validateEmail } from "../../Utils/Validations";
 
 let inputTypes = {
   EMAIL: "email",
@@ -29,39 +29,41 @@ class LoginScreen extends React.Component {
       email: "",
       password: "",
       isShowAlert: false,
-      alertMessage: ""
+      alertMessage: "",
     };
 
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   validationCheck() {
-    const isValidEmail = validateEmail(this.state.email)
+    const isValidEmail = validateEmail(this.state.email);
     if (isValidEmail) {
       if (!!this.state.password && this.state.password.length > 8) {
-        this.setState({ isShowAlert: false })
-        return true
+        this.setState({ isShowAlert: false });
+        return true;
       } else {
-        this.setState({ isShowAlert: true })
-        this.setState({ alertMessage: "Password must be at least 9 character !" })
-        return false
+        this.setState({ isShowAlert: true });
+        this.setState({
+          alertMessage: "Password must be at least 9 character !",
+        });
+        return false;
       }
     } else {
-      this.setState({ isShowAlert: true })
-      this.setState({ alertMessage: "Invalid email !" })
-      return false
+      this.setState({ isShowAlert: true });
+      this.setState({ alertMessage: "Invalid email !" });
+      return false;
     }
   }
 
   onSubmit() {
-    const isInvalid = this.validationCheck()
+    const isInvalid = this.validationCheck();
     if (isInvalid) {
       this.props.loginEmail({
         email: this.state.email,
         password: this.state.password,
       });
     } else {
-      return
+      return;
     }
   }
 
@@ -88,9 +90,15 @@ class LoginScreen extends React.Component {
           justifyContent: "center",
         }}
       >
-        {this.state.isShowAlert && <div className="alert alert-danger" role="alert" style={{ position: "absolute", marginTop: 10 }}>
-          {this.state.alertMessage}
-        </div>}
+        {this.state.isShowAlert && (
+          <div
+            className="alert alert-danger"
+            role="alert"
+            style={{ position: "absolute", marginTop: 10 }}
+          >
+            {this.state.alertMessage}
+          </div>
+        )}
         <div className="row" style={Styles.contentContainer}>
           <div className="col-6" style={Styles.leftContent}>
             <div style={Styles.formContainer}>
@@ -147,8 +155,8 @@ class LoginScreen extends React.Component {
                     &ensp;Loading...
                   </div>
                 ) : (
-                    "Login"
-                  )}
+                  "Login"
+                )}
               </button>
             </div>
           </div>

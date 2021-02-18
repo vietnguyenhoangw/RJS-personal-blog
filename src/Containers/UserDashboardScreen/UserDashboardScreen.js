@@ -5,7 +5,7 @@ import "./Styles/UserDashboardScreen.css";
 // import Styles from "./Styles/HomeScreen";
 
 // constant
-import { backgroundImage } from "../../Constants/ConstantData";
+import { backgroundImage } from "../../Constants/ConstantString";
 
 class UserDashboardScreen extends React.Component {
   constructor(props) {

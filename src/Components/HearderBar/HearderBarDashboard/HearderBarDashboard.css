@@ -16,10 +16,6 @@
     width: 40vw;
     text-align: end;
   }
-
-  .language-drop {
-    display: none;
-  }
 }
 
 @media (min-width: 700px) {
@@ -36,77 +32,5 @@
 
   a {
     display: block;
-  }
-
-  .language-drop {
-    position: relative;
-    display: inline-block;
-  }
-
-  .language-drop > a {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-  }
-
-  .language-drop > a > p {
-    font-size: 16px;
-    margin: 0px;
-  }
-
-  .language-drop > a > img {
-    margin-left: 10px;
-  }
-
-  .language-menu-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    padding: 12px 16px;
-    z-index: 1;
-    right: -15px;
-  }
-
-  .language-menu {
-    background-color: white;
-    border-radius: 10px;
-  }
-
-  .language-menu > a {
-    border-radius: 10px;
-    padding: 10px 20px 10px 20px;
-    color: black;
-    width: 200px;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-  }
-
-  .language-menu > a > p {
-    margin-left: 20px;
-    align-items: center;
-    margin: 0 0 0 20px;
-    font-size: 15px;
-  }
-
-  .language-menu > a > img {
-    align-content: center;
-  }
-
-  .language-menu > a:hover {
-    border-radius: 10px;
-    padding: 10px 20px 10px 20px;
-    color: black;
-    background-color: rgb(239, 239, 239);
-    flex-direction: row;
-  }
-
-  .language-drop:hover .language-menu-content {
-    display: block;
-  }
-
-  a:hover {
-    color: #0056b3;
-    text-decoration: none;
   }
 }

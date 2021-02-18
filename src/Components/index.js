@@ -1,2 +1,3 @@
-export * from "./Cards"
-export * from "./HearderBar"
+export * from "./HearderBar";
+export * from "./Dropdown";
+export * from "./Text";
