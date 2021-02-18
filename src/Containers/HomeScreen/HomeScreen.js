@@ -1,15 +1,10 @@
 import React from "react";
 
-// styles
-import "./Styles/HomeScreen.css";
-// import Styles from "./Styles/HomeScreen";
+// Components
+import { HearderBarDashboard } from "../../Components"
 
-// components
-import SidebarMenu from "../../Components/SidebarMenu/SidebarMenu";
-import PostList from "../../Components/PostList/PostList";
-
-// constant
-import { backgroundImage } from "../../Constants/ConstantData";
+// themes
+import { Images } from "../../Themes"
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -20,60 +15,16 @@ class HomeScreen extends React.Component {
     return (
       <div
         className="container-fluid main-wrapper"
-        style={{ backgroundColor: "white" }}
+        style={{
+          backgroundImage: "url(" + Images.ocean_backround.default + ")",
+          display: "flex",
+          justifyContent: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: 'no-repeat',
+          padding: 'unset'
+        }}
       >
-        <div className="row">
-          <div className="col-1" />
-          <div>
-            {/* Top navigation bar */}
-            <div
-              className="col-10"
-              style={{
-                height: 70,
-                width: "100%",
-                backgroundColor: "white",
-                marginBottom: 15,
-                position: "absolute",
-                zIndex: 100,
-                boxShadow: "0px 4px 2px #FAFAFA"
-              }}
-            >
-              <div
-                style={{
-                  width: "17%",
-                  height: "100%",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <b style={{ alignSelf: "center", margin: 0 }}>
-                  <h3 style={{ margin: 0 }}>Personal Blog</h3>
-                </b>
-              </div>
-              <div />
-            </div>
-          </div>
-          <div className="col-2 .bg-success" style={{ paddingRight: 10 }}>
-            <div
-              style={{
-                alignSelf: "center",
-                display: "flex",
-                justifyContent: "flex-end",
-              }}
-            >
-              <SidebarMenu />
-            </div>
-          </div>
-          <div
-            className="col-8 .bg-secondary pl-0"
-            style={{
-              overflow: "auto",
-            }}
-          >
-            <PostList />
-          </div>
-          <div className="col-1" />
-        </div>
+        <HearderBarDashboard />
       </div>
     );
   }
